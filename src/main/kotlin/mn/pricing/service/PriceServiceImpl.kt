@@ -18,4 +18,9 @@ class PriceServiceImpl : PriceService {
         currency = Currency.EUR
     )
   }
+
+  override fun save(price: Price): Price {
+    LOG.info("Saving Price at Service..")
+    return price
+  }
 }
