@@ -22,4 +22,8 @@ jpa:
       hibernate:
         hbm2ddl:
           auto: update
+flyway:
+  datasources:
+    default:
+      locations: classpath:db/installation
 
