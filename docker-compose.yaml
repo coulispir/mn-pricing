@@ -4,11 +4,11 @@ services:
     build: .
     image: mn-pricing
     container_name: mn-pricing
-#    environment:
-#      postgres.host: postgres
-#      postgres.port: 5432
-#      postgres.db: dynpricing
-#      username: postgresuser
+    environment:
+      postgres.host: postgres
+      postgres.port: 5432
+      postgres.db: mn-pricing
+      username: postgres
 #      password: postgrespassword
     ports:
       - 8080:8080
@@ -19,9 +19,6 @@ services:
     container_name: postgres
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
-#      - POSTGRESQL_USERNAME=postgresuser
-#      - POSTGRESQL_PASSWORD=postgrespassword
-#      - POSTGRESQL_DATABASE=dynpricing
     ports:
       - "5432:5432"
     volumes:

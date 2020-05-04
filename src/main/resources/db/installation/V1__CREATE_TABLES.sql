@@ -1,7 +1,7 @@
 create TABLE IF NOT EXISTS price
 (
-    id uuid                        not null,
-    amount        numeric                     not null,
+    id           uuid                        not null,
+    amount       numeric                     not null,
     currency     numeric                     not null
     );
 create sequence if not exists price_seq
