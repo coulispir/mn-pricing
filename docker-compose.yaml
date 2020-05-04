@@ -12,19 +12,20 @@ services:
 #      password: postgrespassword
     ports:
       - 8080:8080
-#    depends_on:
-#      - postgres
-#  postgres:
-#    image: bitnami/postgresql:11
-#    container_name: postgres
-#    environment:
+    depends_on:
+      - postgres
+  postgres:
+    image: bitnami/postgresql:11
+    container_name: postgres
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
 #      - POSTGRESQL_USERNAME=postgresuser
 #      - POSTGRESQL_PASSWORD=postgrespassword
 #      - POSTGRESQL_DATABASE=dynpricing
-#    ports:
-#      - "5432:5432"
-#    volumes:
-#      - postgresdata:/bitnami
-#
-#volumes:
-#  postgresdata:
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresdata:/bitnami
+
+volumes:
+  postgresdata:
