@@ -2,12 +2,13 @@ package mn.pricing.service
 
 import mn.pricing.domain.enum.Currency
 import mn.pricing.domain.model.Price
+import mn.pricing.repository.PriceRepository
 import org.slf4j.LoggerFactory
 import java.math.BigDecimal
 import javax.inject.Singleton
 
 @Singleton
-class PriceServiceImpl : PriceService {
+class PriceServiceImpl(val priceRepository: PriceRepository) : PriceService {
 
   private val LOG = LoggerFactory.getLogger(this::class.java)
 
@@ -21,6 +22,6 @@ class PriceServiceImpl : PriceService {
 
   override fun save(price: Price): Price {
     LOG.info("Saving Price at Service..")
-    return price
+    return priceRepository.save(price)
   }
 }
