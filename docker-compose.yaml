@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  mn-pricing:
+    build: .
+    image: mn-pricing
+    container_name: mn-pricing
+#    environment:
+#      postgres.host: postgres
+#      postgres.port: 5432
+#      postgres.db: dynpricing
+#      username: postgresuser
+#      password: postgrespassword
+    ports:
+      - 8080:8080
+#    depends_on:
+#      - postgres
+#  postgres:
+#    image: bitnami/postgresql:11
+#    container_name: postgres
+#    environment:
+#      - POSTGRESQL_USERNAME=postgresuser
+#      - POSTGRESQL_PASSWORD=postgrespassword
+#      - POSTGRESQL_DATABASE=dynpricing
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgresdata:/bitnami
+#
+#volumes:
+#  postgresdata:
