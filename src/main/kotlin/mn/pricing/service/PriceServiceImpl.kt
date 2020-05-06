@@ -1,6 +1,7 @@
 package mn.pricing.service
 
 import mn.pricing.domain.enum.Currency
+import mn.pricing.domain.exception.PriceException
 import mn.pricing.domain.model.Price
 import mn.pricing.repository.PriceRepository
 import org.slf4j.LoggerFactory
@@ -21,6 +22,7 @@ class PriceServiceImpl(val priceRepository: PriceRepository) : PriceService {
   }
 
   override fun save(price: Price): Price {
+    if (price.amount<= BigDecimal.ZERO) throw PriceException(message = "Error")
     LOG.info("Saving Price at Service..")
     return priceRepository.save(price)
   }

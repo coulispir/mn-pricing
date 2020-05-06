@@ -1,0 +1,10 @@
+---
+micronaut:
+  application:
+    name: mn-pricing
+---
+micronaut:
+  io:
+    watch:
+      paths: src/main
+      restart: true
